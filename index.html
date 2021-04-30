@@ -14,22 +14,56 @@
 <body>
   <h1>JurCalc</h1>
   <div>Tarifrechner für Rechtsanwälte 10/13</div>
-  <div>Streitwert: <input type="number" placeholder="Streitwert" id="st">€
-<select id="tp">
+  <div class="form-group">
+    <div class="control-label">
+        <label>Streitwert</label>
+    </div>
+    <div class="input-group">
+    <input class="form-control" type="number" placeholder="Streitwert" id="st"><span class="input-group-addon">€</span>
+    </div><br>
+
+<select class="form-control" id="tp">
+    <option>--Tarifposten--</option>  
     <option value="tp1">TP1</option>
     <option value="tp2">TP2</option>
     <option value="tp3a">TP3A</option>
     <option value="tp3b">TP3B</option>
     <option value="tp3c">TP3C</option>
-</select></div><br>
+</select></div>
 
-<div>Tarifsatz: <input type="number" id="result" readonly>€</div><br>
-<div>20% Ust: <input type="number" id="ust" readonly>€</div><br>
-<div style="font-weight: bold;">GESAMT: <input type="number" id="gesamt" readonly>€</div>
-<button type="button" class="btn btn-primary btn-lg btn-block" onclick="calc()">Berechnen</button>
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="iO" checked>innerorts
+</label>
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="aO">außerorts
+</label><br>
 
+<button type="button" class="btn btn-primary btn-lg btn-block" onclick="calc()">Berechnen</button><br>
+
+<!-- <div>Einheitssatz: <input id="es" readonly>€</div><br> -->
+<!-- Berechnungen -->
+<div class="form-group">
+  <div class="control-label">
+    <label>Tarifsatz</label>
+  </div>
+  <div class="input-group">
+    <input class="form-control" id="result" readonly><span class="input-group-addon">€</span>
+  </div><br>
+  <div class="control-label">
+    <label>20% Umsatzsteuer</label>
+  </div>
+  <div class="input-group">
+    <input class="form-control" id="ust" readonly><span class="input-group-addon">€</span>
+  </div><br>
+  <div class="control-label">
+    <label>Gesamt</label>
+  </div>
+  <div class="input-group">
+    <input class="form-control" id="gesamt" readonly><span class="input-group-addon">€</span>
+  </div><br>
+</div>
 </body>
 <footer>
-<p>Hinweis: Für Vollständigkeit und Richtigkeit kann nicht gehaftet werden.</p>
+  <p>Hinweis: Für Vollständigkeit und Richtigkeit kann nicht gehaftet werden.</p>
 </footer>
 </html>
