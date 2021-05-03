@@ -14,30 +14,75 @@ function calc()
     var op=document.getElementById("tp").value;
     
     if (n1 <= 40) { //werte -40
-    if (op === "tp1") {
-    document.getElementById("result").value = arrTP1[0];
-    document.getElementById("ust").value = (arrTP1[0]/100*20).toFixed(2);
-    document.getElementById("gesamt").value = arrTP1[0] + (arrTP1[0]/100*20);
-    }
-    if (op === "tp2") {
-      document.getElementById("result").value = arrTP2[0];
-      document.getElementById("ust").value = (arrTP2[0]/100*20).toFixed(2);
-      document.getElementById("gesamt").value = arrTP2[0] + (arrTP2[0]/100*20);
+      if (op === "tp1") { 
+        if ($('input[value=innerOrt]:checked').length > 0) {
+          document.getElementById("es").value = (arrTP1[0]/100*60).toFixed(2);
+          document.getElementById("result").value = arrTP1[0];
+          document.getElementById("ust").value = ((arrTP1[0]+arrTP1[0]/100*60)/100*20).toFixed(2);
+          document.getElementById("gesamt").value = (arrTP1[0] + (arrTP1[0]/100*60) + (arrTP1[0]/100*20)).toFixed(2);
+        }  
+        if ($('input[value=außerOrt]:checked').length > 0) {
+          document.getElementById("es").value = (arrTP1[0]/100*120).toFixed(2);      
+          document.getElementById("result").value = arrTP1[0];
+          document.getElementById("ust").value = ((arrTP1[0]+arrTP1[0]/100*120)/100*20).toFixed(2);
+          document.getElementById("gesamt").value = (arrTP1[0] + (arrTP1[0]/100*120) + (arrTP1[0]/100*20)).toFixed(2);          
+        }
       }
-    if (op === "tp3a") {
-      document.getElementById("result").value = arrTP3a[0];
-      document.getElementById("ust").value = (arrTP3a[0]/100*20).toFixed(2);
-      document.getElementById("gesamt").value = arrTP3a[0] + (arrTP3a[0]/100*20);
+      if (op === "tp2") {
+        if ($('input[value=innerOrt]:checked').length > 0) {
+          document.getElementById("es").value = (arrTP2[0]/100*60).toFixed(2);
+          document.getElementById("result").value = arrTP2[0];
+          document.getElementById("ust").value = ((arrTP2[0]+arrTP2[0]/100*60)/100*20).toFixed(2);
+          document.getElementById("gesamt").value = (arrTP2[0] + (arrTP2[0]/100*60) + (arrTP2[0]/100*20)).toFixed(2);
+        }  
+        if ($('input[value=außerOrt]:checked').length > 0) {
+          document.getElementById("es").value = (arrTP2[0]/100*120).toFixed(2);      
+          document.getElementById("result").value = arrTP2[0];
+          document.getElementById("ust").value = ((arrTP2[0]+arrTP2[0]/100*120)/100*20).toFixed(2);
+          document.getElementById("gesamt").value = (arrTP2[0] + (arrTP2[0]/100*120) + (arrTP2[0]/100*20)).toFixed(2);          
+        }
+      }
+      if (op === "tp3a") {
+        if ($('input[value=innerOrt]:checked').length > 0) {
+          document.getElementById("es").value = (arrTP3a[0]/100*60).toFixed(2);
+          document.getElementById("result").value = arrTP3a[0];
+          document.getElementById("ust").value = ((arrTP3a[0]+arrTP3a[0]/100*60)/100*20).toFixed(2);
+          document.getElementById("gesamt").value = (arrTP3a[0] + (arrTP3a[0]/100*60) + (arrTP3a[0]/100*20)).toFixed(2);
+        }  
+        if ($('input[value=außerOrt]:checked').length > 0) {
+          document.getElementById("es").value = (arrTP3a[0]/100*120).toFixed(2);      
+          document.getElementById("result").value = arrTP3a[0];
+          document.getElementById("ust").value = ((arrTP3a[0]+arrTP3a[0]/100*120)/100*20).toFixed(2);
+          document.getElementById("gesamt").value = (arrTP3a[0] + (arrTP3a[0]/100*120) + (arrTP3a[0]/100*20)).toFixed(2);          
+        }      
       }  
-    if (op === "tp3b") {
-      document.getElementById("result").value = arrTP3b[0];
-      document.getElementById("ust").value = (arrTP3b[0]/100*20).toFixed(2);
-      document.getElementById("gesamt").value = arrTP3b[0] + (arrTP3b[0]/100*20);
+      if (op === "tp3b") {
+        if ($('input[value=innerOrt]:checked').length > 0) {
+          document.getElementById("es").value = (arrTP3b[0]/100*60).toFixed(2);
+          document.getElementById("result").value = arrTP3b[0];
+          document.getElementById("ust").value = ((arrTP3b[0]+arrTP3b[0]/100*60)/100*20).toFixed(2);
+          document.getElementById("gesamt").value = (arrTP3b[0] + (arrTP3b[0]/100*60) + (arrTP3b[0]/100*20)).toFixed(2);
+        }  
+        if ($('input[value=außerOrt]:checked').length > 0) {
+          document.getElementById("es").value = (arrTP3b[0]/100*120).toFixed(2);      
+          document.getElementById("result").value = arrTP3b[0];
+          document.getElementById("ust").value = ((arrTP3b[0]+arrTP3b[0]/100*120)/100*20).toFixed(2);
+          document.getElementById("gesamt").value = (arrTP3b[0] + (arrTP3b[0]/100*120) + (arrTP3b[0]/100*20)).toFixed(2);          
+        }   
       }
-    if (op === "tp3c") {
-      document.getElementById("result").value = arrTP3c[0];
-      document.getElementById("ust").value = (arrTP3c[0]/100*20).toFixed(2);
-      document.getElementById("gesamt").value = arrTP3c[0] + (arrTP3c[0]/100*20);
+        if (op === "tp3c") {
+          if ($('input[value=innerOrt]:checked').length > 0) {
+            document.getElementById("es").value = (arrTP3c[0]/100*60).toFixed(2);
+            document.getElementById("result").value = arrTP3c[0];
+            document.getElementById("ust").value = ((arrTP3c[0]+arrTP3c[0]/100*60)/100*20).toFixed(2);
+            document.getElementById("gesamt").value = (arrTP3c[0] + (arrTP3c[0]/100*60) + (arrTP3c[0]/100*20)).toFixed(2);
+          }  
+          if ($('input[value=außerOrt]:checked').length > 0) {
+            document.getElementById("es").value = (arrTP3c[0]/100*120).toFixed(2);      
+            document.getElementById("result").value = arrTP3c[0];
+            document.getElementById("ust").value = ((arrTP3c[0]+arrTP3c[0]/100*120)/100*20).toFixed(2);
+            document.getElementById("gesamt").value = (arrTP3c[0] + (arrTP3c[0]/100*120) + (arrTP3c[0]/100*20)).toFixed(2);          
+          }   
       }
     }
     if (n1 >= 41 && n1 <= 70) { //werte 41-70

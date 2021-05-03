@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <title>JurCalc</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -32,17 +32,23 @@
 </select></div>
 
 <label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="iO" checked>innerorts
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="innerOrt" checked>innerorts
 </label>
 <label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="aO">außerorts
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="außerOrt">außerorts
 </label><br>
 
 <button type="button" class="btn btn-primary btn-lg btn-block" onclick="calc()">Berechnen</button><br>
 
-<!-- <div>Einheitssatz: <input id="es" readonly>€</div><br> -->
+
 <!-- Berechnungen -->
 <div class="form-group">
+  <div class="control-label">
+    <label>Einheitssatz</label>
+  </div>
+  <div class="input-group">
+    <input class="form-control" id="es" readonly><span class="input-group-addon">€</span>
+  </div><br>
   <div class="control-label">
     <label>Tarifsatz</label>
   </div>
