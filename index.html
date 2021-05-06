@@ -1,76 +1,120 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
     <title>JurCalc</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
   </head>
-<body>
-  <h1>JurCalc</h1>
-  <h3>RATG TP 1,2,3 Schriftsätze, Verhandlungen</h3>
-  <div>Tarifrechner für Rechtsanwälte 10/13</div>
-  <div class="form-group">
-    <div class="control-label">
+  <body>
+    <h1>JurCalc</h1>
+    <h3>RATG TP 1,2,3 Schriftsätze, Verhandlungen</h3>
+    <div>Tarifrechner für Rechtsanwälte 10/13</div>
+    <div class="form-group">
+      <div class="control-label">
         <label>Streitwert</label>
+      </div>
+      <div class="input-group">
+        <input
+          class="form-control"
+          type="number"
+          placeholder="Streitwert"
+          id="st"
+        /><span class="input-group-addon">€</span>
+      </div>
+      <br />
+
+      <select class="form-control" id="tp">
+        <option>--Tarifposten--</option>
+        <option value="tp1">TP1</option>
+        <option value="tp2">TP2</option>
+        <option value="tp3a">TP3A</option>
+        <option value="tp3b">TP3B</option>
+        <option value="tp3c">TP3C</option>
+      </select>
     </div>
-    <div class="input-group">
-    <input class="form-control" type="number" placeholder="Streitwert" id="st"><span class="input-group-addon">€</span>
-    </div><br>
 
-<select class="form-control" id="tp">
-    <option>--Tarifposten--</option>  
-    <option value="tp1">TP1</option>
-    <option value="tp2">TP2</option>
-    <option value="tp3a">TP3A</option>
-    <option value="tp3b">TP3B</option>
-    <option value="tp3c">TP3C</option>
-</select></div>
+    <label class="radio-inline">
+      <input
+        type="radio"
+        name="inlineRadioOptions"
+        id="inlineRadio1"
+        value="innerOrt"
+        checked
+      />innerorts
+    </label>
+    <label class="radio-inline">
+      <input
+        type="radio"
+        name="inlineRadioOptions"
+        id="inlineRadio2"
+        value="außerOrt"
+      />außerorts </label
+    ><br />
 
-<label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="innerOrt" checked>innerorts
-</label>
-<label class="radio-inline">
-  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="außerOrt">außerorts
-</label><br>
+    <button
+      type="button"
+      class="btn btn-primary btn-lg btn-block"
+      onclick="calc()"
+    >
+      Berechnen</button
+    ><br />
 
-<button type="button" class="btn btn-primary btn-lg btn-block" onclick="calc()">Berechnen</button><br>
-
-
-<!-- Berechnungen -->
-<div class="form-group">
-  <div class="control-label">
-    <label>Tarifsatz</label>
-  </div>
-  <div class="input-group">
-    <input class="form-control" id="result" readonly><span class="input-group-addon">€</span>
-  </div><br>
-  <div class="control-label">
-    <label>Einheitssatz</label>
-  </div>
-  <div class="input-group">
-    <input class="form-control" id="es" readonly><span class="input-group-addon">€</span>
-  </div><br>
-  <div class="control-label">
-    <label>20% Umsatzsteuer</label>
-  </div>
-  <div class="input-group">
-    <input class="form-control" id="ust" readonly><span class="input-group-addon">€</span>
-  </div><br>
-  <div class="control-label">
-    <label>Gesamt</label>
-  </div>
-  <div class="input-group">
-    <input class="form-control" id="gesamt" readonly><span class="input-group-addon">€</span>
-  </div><br>
-</div>
-</body>
-<footer>
-  <p>Hinweis: Für Vollständigkeit und Richtigkeit kann nicht gehaftet werden.</p>
-</footer>
+    <!-- Berechnungen -->
+    <div class="form-group">
+      <div class="control-label">
+        <label>Tarifsatz</label>
+      </div>
+      <div class="input-group">
+        <input class="form-control" id="result" readonly /><span
+          class="input-group-addon"
+          >€</span
+        >
+      </div>
+      <br />
+      <div class="control-label">
+        <label>Einheitssatz</label>
+      </div>
+      <div class="input-group">
+        <input class="form-control" id="es" readonly /><span
+          class="input-group-addon"
+          >€</span
+        >
+      </div>
+      <br />
+      <div class="control-label">
+        <label>20% Umsatzsteuer</label>
+      </div>
+      <div class="input-group">
+        <input class="form-control" id="ust" readonly /><span
+          class="input-group-addon"
+          >€</span
+        >
+      </div>
+      <br />
+      <div class="control-label">
+        <label>Gesamt</label>
+      </div>
+      <div class="input-group">
+        <input class="form-control" id="gesamt" readonly /><span
+          class="input-group-addon"
+          >€</span
+        >
+      </div>
+      <br />
+    </div>
+  </body>
+  <footer>
+    <p>
+      Hinweis: Für Vollständigkeit und Richtigkeit kann nicht gehaftet werden.
+    </p>
+  </footer>
 </html>
